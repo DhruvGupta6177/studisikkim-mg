@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MountainSnow, Menu, Map, BookOpenText, Route, CalendarDays, Sparkles, Globe } from "lucide-react";
+import { MountainSnow, Menu, Map, BookOpenText, Route, CalendarDays, Sparkles, Globe, MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -23,6 +23,7 @@ const navLinks = [
   { href: "/itineraries", label: "Itineraries", icon: Route },
   { href: "/calendar", label: "Calendar", icon: CalendarDays },
   { href: "/discover", label: "Discover", icon: Sparkles },
+  { href: "/chat", label: "AI Chat", icon: MessageCircle },
 ];
 
 function LanguageSwitcher() {

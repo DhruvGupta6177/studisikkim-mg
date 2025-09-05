@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import { monasteries } from "@/lib/monastery-data";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Camera, Calendar, BookOpen } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Camera, Calendar, BookOpen, Globe } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   return monasteries.map((monastery) => ({
@@ -15,6 +16,7 @@ export async function generateStaticParams() {
 export default function MonasteryDetailPage({ params, searchParams }: { params: { id: string }, searchParams: { lang?: string } }) {
   const monastery = monasteries.find((m) => m.id === params.id);
   const lang = searchParams.lang === 'fr' ? 'fr' : 'en';
+  const otherLang = lang === 'en' ? 'fr' : 'en';
 
   if (!monastery) {
     notFound();
@@ -45,28 +47,18 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
 
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-8">
-            <div>
-              <h2 className="text-3xl font-headline font-bold flex items-center gap-3">
-                <BookOpen className="w-7 h-7 text-primary" />
-                History & Significance
-              </h2>
-              <Separator className="my-4" />
-              <div className="prose dark:prose-invert max-w-none space-y-4 text-lg">
-                <p>{monastery.history[lang]}</p>
-                <p>{monastery.significance[lang]}</p>
-              </div>
-            </div>
+          <div className="lg:col-span-2 space-y-12">
             
-            <div>
-              <h2 className="text-3xl font-headline font-bold flex items-center gap-3">
-                <Camera className="w-7 h-7 text-primary" />
-                Virtual Tour
-              </h2>
-              <Separator className="my-4" />
-              <Card className="overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="relative h-96 w-full flex items-center justify-center bg-muted/50">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-3xl font-headline font-bold flex items-center gap-3">
+                  <Camera className="w-7 h-7 text-primary" />
+                  Virtual Tour
+                </CardTitle>
+                <CardDescription>Experience the monastery from anywhere with our 360° virtual tour.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                  <div className="relative h-96 w-full flex items-center justify-center bg-muted/50 rounded-lg overflow-hidden">
                     <Image
                         src={monastery.virtualTourUrl}
                         alt={`Virtual tour of ${monastery.name}`}
@@ -77,18 +69,37 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                         <div className="text-center text-white p-4 bg-black/50 rounded-lg">
                             <Camera className="mx-auto h-12 w-12 mb-2" />
-                            <p className="font-bold text-lg">360° Virtual Tour</p>
-                            <p className="text-sm">Experience the monastery from anywhere.</p>
+                            <p className="font-bold text-lg">360° View</p>
                         </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+              </CardContent>
+            </Card>
+
+            <div>
+              <div className="flex justify-between items-center">
+                <h2 className="text-3xl font-headline font-bold flex items-center gap-3">
+                  <BookOpen className="w-7 h-7 text-primary" />
+                  History & Significance
+                </h2>
+                <Button variant="outline" asChild>
+                  <Link href={`?lang=${otherLang}`} scroll={false}>
+                    <Globe className="w-4 h-4 mr-2" />
+                    {otherLang === 'fr' ? 'Voir en Français' : 'View in English'}
+                  </Link>
+                </Button>
+              </div>
+              <Separator className="my-4" />
+              <div className="prose dark:prose-invert max-w-none space-y-4 text-lg">
+                <p>{monastery.history[lang]}</p>
+                <p>{monastery.significance[lang]}</p>
+              </div>
             </div>
+
           </div>
           
           <aside className="lg:col-span-1">
-            <Card>
+            <Card className="sticky top-24">
               <CardHeader>
                 <CardTitle className="font-headline text-2xl">Monastery Details</CardTitle>
               </CardHeader>
@@ -105,9 +116,10 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
                     <span className="font-semibold text-muted-foreground">Established</span>
                     <span className="font-medium text-lg">{monastery.established}</span>
                  </div>
+                 <Separator/>
                  <div className="flex flex-col">
                     <span className="font-semibold text-muted-foreground">Overview</span>
-                    <span className="font-medium text-lg">{monastery.description[lang]}</span>
+                    <p className="text-base">{monastery.description[lang]}</p>
                  </div>
               </CardContent>
             </Card>

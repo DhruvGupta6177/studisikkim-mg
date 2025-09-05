@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MountainSnow, Map, Route, Sparkles, BookOpenText, CalendarDays } from "lucide-react";
+import { MountainSnow, Map, Route, Sparkles, BookOpenText, CalendarDays, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ChatInterface from "./chat/chat-interface";
 
 export default function Home() {
   const features = [
@@ -54,6 +55,24 @@ export default function Home() {
           <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
             <Link href="/monasteries">Start Exploring</Link>
           </Button>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-card">
+        <div className="container mx-auto px-4">
+           <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <MessageCircle className="w-4 h-4" />
+                <span>AI Assistant</span>
+              </div>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">Ask Anything About Sikkimese Monasteries</h2>
+            <p className="mt-2 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Have a question? Our AI assistant is here to provide you with instant information about the history, significance, and visiting details of any monastery.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+             <ChatInterface initialMessages={[]} />
+          </div>
         </div>
       </section>
 
