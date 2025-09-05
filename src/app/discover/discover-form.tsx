@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { generateContent } from "./actions";
 
 import { Button } from "@/components/ui/button";
@@ -39,7 +40,7 @@ function SubmitButton() {
 }
 
 export default function DiscoverForm() {
-  const [state, formAction] = useFormState(generateContent, initialState);
+  const [state, formAction] = useActionState(generateContent, initialState);
   const { toast } = useToast();
   const [userLocation, setUserLocation] = useState<string | undefined>(undefined);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
