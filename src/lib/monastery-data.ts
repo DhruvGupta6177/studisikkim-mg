@@ -13,6 +13,7 @@ export type Monastery = {
   significance: Record<string, string>;
   imageUrl: string;
   virtualTourUrl: string;
+  entranceViewUrl: string;
 };
 
 export type Itinerary = {
@@ -54,6 +55,7 @@ export const monasteries: Monastery[] = [
     },
     imageUrl: 'https://picsum.photos/seed/rumtek/800/600',
     virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634360212!6m8!1m7!1sCAoSLEFGMVFpcE5qTTVOWnNfN2xfUnotOFJzY2d2V2dQOEpYVlZWSjVfSnZEVjFJ!2m2!1d27.3006249!2d88.5701463!3f237.93!4f-12.89!5f0.7820865974627469',
+    entranceViewUrl: 'https://www.google.com/maps/embed?pb=!4v1716309547514!6m8!1m7!1sCAoSLEFGMVFpcE5ucGdtc1VpSDBGcVo0TnhYdk50SzZJNXNfNEdXdk5URkpfSnRI!2m2!1d27.3006!2d88.5701!3f322.25!4f-2.73!5f0.7820865974627469',
   },
   {
     id: 'pemayangtse-monastery',
@@ -75,6 +77,7 @@ export const monasteries: Monastery[] = [
     },
     imageUrl: 'https://picsum.photos/seed/pemayangtse/800/600',
     virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634509421!6m8!1m7!1sCAoSLEFGMVFpcE5tVUtzQ3B6Q2FwcE1tWmxaSnhzX19Gc2dGR2dJNXdPX3l5QmpV!2m2!1d27.307491!2d88.256512!3f359.33!4f-20!5f0.7820865974627469',
+    entranceViewUrl: 'https://www.google.com/maps/embed?pb=!4v1716309656818!6m8!1m7!1sCAoSLEFGMVFpcE1XN2RGOFlmVnFaZ3ZtRmtfX2hOd0ZINkNUT3lWZVlfcGRNVnBE!2m2!1d27.3074!2d88.2565!3f282.89!4f-1.57!5f0.7820865974627469',
   },
   {
     id: 'tashiding-monastery',
@@ -96,6 +99,7 @@ export const monasteries: Monastery[] = [
     },
     imageUrl: 'https://picsum.photos/seed/tashiding/800/600',
     virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634603838!6m8!1m7!1sCAoSLEFGMVFpcE96NEs2dG54S21rUllzc3otZkNMejVEWflRejFUbU91ZXVzN2pF!2m2!1d27.243555!2d88.304911!3f0!4f0!5f0.7820865974627469',
+    entranceViewUrl: 'https://www.google.com/maps/embed?pb=!4v1716309712166!6m8!1m7!1sCAoSLEFGMVFpcE5aQjRCN1lYcGZfS1h6UWlBdk1Lelg2VFZCT3dRbU5fcHlHODlM!2m2!1d27.2435!2d88.3049!3f269.86!4f-12.75!5f0.7820865974627469',
   },
   {
     id: 'enchy-monastery',
@@ -117,6 +121,7 @@ export const monasteries: Monastery[] = [
     },
     imageUrl: 'https://picsum.photos/seed/enchy/800/600',
     virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634676450!6m8!1m7!1sCAoSLEFGMVFpcE1PQkRGNXBCYTNwelJtWnotVmtDRkRFWE13NTZTelQxTWhRVkpI!2m2!1d27.342931!2d88.619731!3f0!4f0!5f0.7820865974627469',
+    entranceViewUrl: 'https://www.google.com/maps/embed?pb=!4v1716309756656!6m8!1m7!1sCAoSLEFGMVFpcE5uLVY0LVk1eHViQlZLcmhBLVFsNnZ5N282aGJJQ2VfNlZ2aGNG!2m2!1d27.3429!2d88.6197!3f262.29!4f-12.08!5f0.7820865974627469',
   },
   {
     id: 'dubdi-monastery',
@@ -138,6 +143,7 @@ export const monasteries: Monastery[] = [
     },
     imageUrl: 'https://picsum.photos/seed/dubdi/800/600',
     virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634749363!6m8!1m7!1sCAoSLEFGMVFpcE96VzctYnpuMXdBRXJNVnJ6c2J0TjdMV1YxZmpwSmNHbTJWUDRr!2m2!1d27.36681!2d88.22557!3f0!4f0!5f0.7820865974627469',
+    entranceViewUrl: 'https://www.google.com/maps/embed?pb=!4v1716309796031!6m8!1m7!1sCAoSLEFGMVFpcE5EeVdSbFk2bXRlYVJhX1h4bU1tTEtRM1J5WjR2SkQzSm5WbVlP!2m2!1d27.3668!2d88.2255!3f269.96!4f-1.57!5f0.7820865974627469',
   },
   {
     id: 'sangachoeling-monastery',
@@ -159,6 +165,7 @@ export const monasteries: Monastery[] = [
     },
     imageUrl: 'https://picsum.photos/seed/sangachoeling/800/600',
     virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634812328!6m8!1m7!1sCAoSLEFGMVFpcE5qLVd2eGVmV2pYQ1pQSnotTThUVkZiaWdkc096RVFqV3ZCaDN3!2m2!1d27.31114!2d88.24436!3f0!4f0!5f0.7820865974627469',
+    entranceViewUrl: 'https://www.google.com/maps/embed?pb=!4v1716309836384!6m8!1m7!1sCAoSLEFGMVFpcE1UaVZEVlE5eVZpTmVYVmxfZ0ZfN05iUkJpZkZzZktCUXNBclJt!2m2!1d27.3111!2d88.2443!3f322.25!4f-2.73!5f0.7820865974627469',
   },
   {
     id: 'phodong-monastery',
@@ -179,7 +186,8 @@ export const monasteries: Monastery[] = [
       fr: 'C\'est l\'un des monastères les plus importants du nord du Sikkim et il suit la lignée Karma Kagyu.',
     },
     imageUrl: 'https://picsum.photos/seed/phodong/800/600',
-    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1714936495208!6m8!1m7!1sCAoSLEFGMVFpcE1kZG5uSjVjUlgtcE54d2otZ2hQeHlCbkl2c2ZuXzJ0MmVfNVpF!2m2!1d27.5025!2d88.6186!3f237.93!4f-12.89!5f0.7820865974627469'
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1714936495208!6m8!1m7!1sCAoSLEFGMVFpcE1kZG5uSjVjUlgtcE54d2otZ2hQeHlCbkl2c2ZuXzJ0MmVfNVpF!2m2!1d27.5025!2d88.6186!3f237.93!4f-12.89!5f0.7820865974627469',
+    entranceViewUrl: 'https://www.google.com/maps/embed?pb=!4v1716309873618!6m8!1m7!1sCAoSLEFGMVFpcE5vWWZ3bU1XbHlNM1FqVlZfQ2ZuZXVzX2xYVzU5S3ZmVHpJd3hY!2m2!1d27.5025!2d88.6186!3f322.25!4f-2.73!5f0.7820865974627469',
   },
   {
     id: 'ralang-monastery',
@@ -200,7 +208,8 @@ export const monasteries: Monastery[] = [
       fr: 'Le monastère est célèbre pour son festival annuel où la danse Kagyed est exécutée.',
     },
     imageUrl: 'https://picsum.photos/seed/ralang/800/600',
-    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1714936563604!6m8!1m7!1sCAoSLEFGMVFpcE5VcnZtYlpfZjdUWnFqWlItNk5fN3lQOHFkU1d3Z1hwbF9GblNq!2m2!1d27.3093!2d88.3845!3f237.93!4f-12.89!5f0.7820865974627469'
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1714936563604!6m8!1m7!1sCAoSLEFGMVFpcE5VcnZtYlpfZjdUWnFqWlItNk5fN3lQOHFkU1d3Z1hwbF9GblNq!2m2!1d27.3093!2d88.3845!3f237.93!4f-12.89!5f0.7820865974627469',
+    entranceViewUrl: 'https://www.google.com/maps/embed?pb=!4v1716309908638!6m8!1m7!1sCAoSLEFGMVFpcE53S0R2d1BVeFh2c1hJLVJ0UHY0Q3FkUzh0eGZfM3d2X2w5eG1R!2m2!1d27.3093!2d88.3845!3f322.25!4f-2.73!5f0.7820865974627469',
   }
 ];
 

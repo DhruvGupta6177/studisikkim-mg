@@ -1,6 +1,8 @@
 
+'use client';
+
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 import { monasteries } from "@/lib/monastery-data";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
@@ -8,21 +10,23 @@ import { Camera, Calendar, BookOpen, Globe, Route } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useState, useMemo } from "react";
 
-export async function generateStaticParams() {
-  return monasteries.map((monastery) => ({
-    id: monastery.id,
-  }));
-}
-
-export default function MonasteryDetailPage({ params, searchParams }: { params: { id: string }, searchParams: { lang?: string } }) {
-  const monastery = monasteries.find((m) => m.id === params.id);
-  const lang = searchParams.lang === 'fr' ? 'fr' : 'en';
+export default function MonasteryDetailPage({ params }: { params: { id: string }}) {
+  const monastery = useMemo(() => monasteries.find((m) => m.id === params.id), [params.id]);
+  const searchParams = useSearchParams();
+  const lang = searchParams.get('lang') === 'fr' ? 'fr' : 'en';
   const otherLang = lang === 'en' ? 'fr' : 'en';
+
+  const [tourUrl, setTourUrl] = useState(monastery?.virtualTourUrl);
 
   if (!monastery) {
     notFound();
   }
+  
+  const handleViewEntranceClick = () => {
+    setTourUrl(monastery.entranceViewUrl);
+  };
   
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${monastery.coordinates.lat},${monastery.coordinates.lng}`;
 
@@ -64,8 +68,9 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
               <CardContent>
                   <div className="relative h-[60vh] w-full bg-muted/50 rounded-lg overflow-hidden">
                     <iframe
+                        key={tourUrl}
                         className="w-full h-full border-0"
-                        src={monastery.virtualTourUrl}
+                        src={tourUrl}
                         allowFullScreen={true}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
@@ -120,10 +125,14 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
                     <p className="text-base">{monastery.description[lang]}</p>
                  </div>
                  <Separator/>
-                 <Button asChild className="w-full">
+                 <Button onClick={handleViewEntranceClick} className="w-full">
+                    <Camera className="w-4 h-4 mr-2"/>
+                    View Entrance (360°)
+                 </Button>
+                 <Button asChild className="w-full" variant="outline">
                     <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
                         <Route className="w-4 h-4 mr-2"/>
-                        Get Directions
+                        Get Directions on Map
                     </a>
                  </Button>
               </CardContent>
