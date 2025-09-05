@@ -160,6 +160,48 @@ export const monasteries: Monastery[] = [
     imageUrl: 'https://picsum.photos/seed/sangachoeling/800/600',
     virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634812328!6m8!1m7!1sCAoSLEFGMVFpcE5qLVd2eGVmV2pYQ1pQSnotTThUVkZiaWdkc096RVFqV3ZCaDN3!2m2!1d27.31114!2d88.24436!3f0!4f0!5f0.7820865974627469',
   },
+  {
+    id: 'phodong-monastery',
+    name: 'Phodong Monastery',
+    location: 'North Sikkim',
+    coordinates: { lat: 27.5025, lng: 88.6186 },
+    established: '18th century',
+    description: {
+      en: 'A beautiful monastery of the Kagyupa order, known for its intricate murals and frescoes.',
+      fr: 'Un beau monastère de l\'ordre Kagyupa, connu pour ses peintures murales et fresques complexes.',
+    },
+    history: {
+      en: 'The monastery was founded by the 4th Chogyal Gyurmed Namgyal. The current building is a reconstruction as the original was destroyed by an earthquake.',
+      fr: 'Le monastère a été fondé par le 4ème Chogyal Gyurmed Namgyal. Le bâtiment actuel est une reconstruction car l\'original a été détruit par un tremblement de terre.',
+    },
+    significance: {
+      en: 'It is one of the most important monasteries in North Sikkim and follows the Karma Kagyu lineage.',
+      fr: 'C\'est l\'un des monastères les plus importants du nord du Sikkim et il suit la lignée Karma Kagyu.',
+    },
+    imageUrl: 'https://picsum.photos/seed/phodong/800/600',
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1714936495208!6m8!1m7!1sCAoSLEFGMVFpcE1kZG5uSjVjUlgtcE54d2otZ2hQeHlCbkl2c2ZuXzJ0MmVfNVpF!2m2!1d27.5025!2d88.6186!3f237.93!4f-12.89!5f0.7820865974627469'
+  },
+  {
+    id: 'ralang-monastery',
+    name: 'Ralang Monastery',
+    location: 'South Sikkim',
+    coordinates: { lat: 27.3093, lng: 88.3845 },
+    established: '1768',
+    description: {
+      en: 'Home to a large collection of paintings and thangkas, it is an important monastery for the Kagyu sect.',
+      fr: 'Abritant une grande collection de peintures et de thangkas, c\'est un monastère important pour la secte Kagyu.',
+    },
+    history: {
+      en: 'It was built in 1768 after the 4th Chogyal returned from his pilgrimage. The monastery hosts the annual Pang Lhabsol festival.',
+      fr: 'Il a été construit en 1768 après le retour du 4ème Chogyal de son pèlerinage. Le monastère accueille le festival annuel de Pang Lhabsol.',
+    },
+    significance: {
+      en: 'The monastery is famous for its annual festival where the Kagyed dance is performed.',
+      fr: 'Le monastère est célèbre pour son festival annuel où la danse Kagyed est exécutée.',
+    },
+    imageUrl: 'https://picsum.photos/seed/ralang/800/600',
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1714936563604!6m8!1m7!1sCAoSLEFGMVFpcE5VcnZtYlpfZjdUWnFqWlItNk5fN3lQOHFkU1d3Z1hwbF9GblNq!2m2!1d27.3093!2d88.3845!3f237.93!4f-12.89!5f0.7820865974627469'
+  }
 ];
 
 export const itineraries: Itinerary[] = [
@@ -168,7 +210,7 @@ export const itineraries: Itinerary[] = [
     title: "East Sikkim Spiritual Tour",
     duration: "3 Days / 2 Nights",
     description: "Explore the major monasteries around the capital city of Gangtok, including the magnificent Rumtek Monastery.",
-    monasteries: ["Rumtek Monastery", "Enchey Monastery"],
+    monasteries: ["Rumtek Monastery", "Enchey Monastery", "Phodong Monastery"],
     imageUrl: "https://picsum.photos/seed/east-sikkim/600/400",
   },
   {
@@ -184,7 +226,7 @@ export const itineraries: Itinerary[] = [
     title: "Complete Sikkim Monastery Circuit",
     duration: "7 Days / 6 Nights",
     description: "An immersive tour covering the most significant monasteries across East and West Sikkim for a comprehensive cultural experience.",
-    monasteries: ["Rumtek Monastery", "Pemayangtse Monastery", "Tashiding Monastery", "Enchey Monastery", "Dubdi Monastery", "Sanga Choeling Monastery"],
+    monasteries: ["Rumtek Monastery", "Pemayangtse Monastery", "Tashiding Monastery", "Enchey Monastery", "Dubdi Monastery", "Sanga Choeling Monastery", "Phodong Monastery", "Ralang Monastery"],
     imageUrl: "https://picsum.photos/seed/complete-sikkim/600/400",
   },
 ];
