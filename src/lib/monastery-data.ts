@@ -1,3 +1,4 @@
+
 export type Monastery = {
   id: string;
   name: string;
@@ -47,7 +48,7 @@ export const monasteries: Monastery[] = [
       fr: 'Il abrite un stupa doré contenant les reliques du 16ème Karmapa, ainsi que de nombreux autres artefacts sacrés et écritures religieuses.',
     },
     imageUrl: 'https://picsum.photos/seed/rumtek/800/600',
-    virtualTourUrl: 'https://picsum.photos/seed/rumtek-tour/1200/800',
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634360212!6m8!1m7!1sCAoSLEFGMVFpcE5qTTVOWnNfN2xfUnotOFJzY2d2V2dQOEpYVlZWSjVfSnZEVjFJ!2m2!1d27.3006249!2d88.5701463!3f237.93!4f-12.89!5f0.7820865974627469',
   },
   {
     id: 'pemayangtse-monastery',
@@ -67,7 +68,7 @@ export const monasteries: Monastery[] = [
       fr: "Célèbre pour sa magnifique collection d'art bouddhiste, ses sculptures et une maquette en bois à sept niveaux du palais céleste du Guru Rinpoche, Zangdok Palri.",
     },
     imageUrl: 'https://picsum.photos/seed/pemayangtse/800/600',
-    virtualTourUrl: 'https://picsum.photos/seed/pemayangtse-tour/1200/800',
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634509421!6m8!1m7!1sCAoSLEFGMVFpcE5tVUtzQ3B6Q2FwcE1tWmxaSnhzX19Gc2dGR2dJNXdPX3l5QmpV!2m2!1d27.307491!2d88.256512!3f359.33!4f-20!5f0.7820865974627469',
   },
   {
     id: 'tashiding-monastery',
@@ -87,7 +88,7 @@ export const monasteries: Monastery[] = [
       fr: 'On croit qu\'un simple aperçu du monastère peut purifier de tous les péchés. Il abrite le chorten sacré \'Thongwa Rangdrol\', dont la vue est censée accorder la libération.',
     },
     imageUrl: 'https://picsum.photos/seed/tashiding/800/600',
-    virtualTourUrl: 'https://picsum.photos/seed/tashiding-tour/1200/800',
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634603838!6m8!1m7!1sCAoSLEFGMVFpcE96NEs2dG54S21rUllzc3otZkNMejVEWflRejFUbU91ZXVzN2pF!2m2!1d27.243555!2d88.304911!3f0!4f0!5f0.7820865974627469',
   },
   {
     id: 'enchy-monastery',
@@ -107,7 +108,7 @@ export const monasteries: Monastery[] = [
       fr: 'Le monastère abrite un certain nombre d\'images de dieux, de déesses et d\'autres objets religieux. On croit que les divinités protectrices, Khangchendzonga et Yabdean, résident dans ce monastère.',
     },
     imageUrl: 'https://picsum.photos/seed/enchy/800/600',
-    virtualTourUrl: 'https://picsum.photos/seed/enchy-tour/1200/800',
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634676450!6m8!1m7!1sCAoSLEFGMVFpcE1PQkRGNXBCYTNwelJtWnotVmtDRkRFWE13NTZTelQxTWhRVkpI!2m2!1d27.342931!2d88.619731!3f0!4f0!5f0.7820865974627469',
   },
   {
     id: 'dubdi-monastery',
@@ -127,7 +128,7 @@ export const monasteries: Monastery[] = [
       fr: 'C\'est un site très vénéré et un lieu de pèlerinage important pour les bouddhistes.',
     },
     imageUrl: 'https://picsum.photos/seed/dubdi/800/600',
-    virtualTourUrl: 'https://picsum.photos/seed/dubdi-tour/1200/800',
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634749363!6m8!1m7!1sCAoSLEFGMVFpcE96VzctYnpuMXdBRXJNVnJ6c2J0TjdMV1YxZmpwSmNHbTJWUDRr!2m2!1d27.36681!2d88.22557!3f0!4f0!5f0.7820865974627469',
   },
   {
     id: 'sangachoeling-monastery',
@@ -147,7 +148,7 @@ export const monasteries: Monastery[] = [
       fr: 'Il est particulièrement important pour la secte Nyingma et était à l\'origine réservé aux hommes uniquement.',
     },
     imageUrl: 'https://picsum.photos/seed/sangachoeling/800/600',
-    virtualTourUrl: 'https://picsum.photos/seed/sangachoeling-tour/1200/800',
+    virtualTourUrl: 'https://www.google.com/maps/embed?pb=!4v1628634812328!6m8!1m7!1sCAoSLEFGMVFpcE5qLVd2eGVmV2pYQ1pQSnotTThUVkZiaWdkc096RVFqV3ZCaDN3!2m2!1d27.31114!2d88.24436!3f0!4f0!5f0.7820865974627469',
   },
 ];
 

@@ -60,20 +60,14 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
                 <CardDescription>Experience the monastery from anywhere with our 360° virtual tour.</CardDescription>
               </CardHeader>
               <CardContent>
-                  <div className="relative h-96 w-full flex items-center justify-center bg-muted/50 rounded-lg overflow-hidden">
-                    <Image
+                  <div className="relative h-96 w-full bg-muted/50 rounded-lg overflow-hidden">
+                    <iframe
+                        className="w-full h-full border-0"
                         src={monastery.virtualTourUrl}
-                        alt={`Virtual tour of ${monastery.name}`}
-                        data-ai-hint="monastery interior"
-                        fill
-                        className="object-cover"
-                    />
-                     <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                        <div className="text-center text-white p-4 bg-black/50 rounded-lg">
-                            <Camera className="mx-auto h-12 w-12 mb-2" />
-                            <p className="font-bold text-lg">360° View</p>
-                        </div>
-                    </div>
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
               </CardContent>
             </Card>
