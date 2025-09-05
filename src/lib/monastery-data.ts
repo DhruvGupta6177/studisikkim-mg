@@ -3,6 +3,10 @@ export type Monastery = {
   id: string;
   name: string;
   location: string;
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
   established: string;
   description: Record<string, string>;
   history: Record<string, string>;
@@ -34,6 +38,7 @@ export const monasteries: Monastery[] = [
     id: 'rumtek-monastery',
     name: 'Rumtek Monastery',
     location: 'Gangtok, Sikkim',
+    coordinates: { lat: 27.3006, lng: 88.5701 },
     established: '16th century',
     description: {
       en: 'One of the largest and most significant monasteries in Sikkim, Rumtek is the seat of the Karmapa Lama.',
@@ -54,6 +59,7 @@ export const monasteries: Monastery[] = [
     id: 'pemayangtse-monastery',
     name: 'Pemayangtse Monastery',
     location: 'Pelling, Sikkim',
+    coordinates: { lat: 27.3074, lng: 88.2565 },
     established: '1705',
     description: {
       en: "One of the oldest and premier monasteries of Sikkim, belonging to the Nyingma order of Tibetan Buddhism.",
@@ -74,6 +80,7 @@ export const monasteries: Monastery[] = [
     id: 'tashiding-monastery',
     name: 'Tashiding Monastery',
     location: 'West Sikkim',
+    coordinates: { lat: 27.2435, lng: 88.3049 },
     established: '1641',
     description: {
       en: 'Considered the most sacred and holiest monastery in Sikkim, perched on a heart-shaped hilltop.',
@@ -94,6 +101,7 @@ export const monasteries: Monastery[] = [
     id: 'enchy-monastery',
     name: 'Enchey Monastery',
     location: 'Gangtok, Sikkim',
+    coordinates: { lat: 27.3429, lng: 88.6197 },
     established: '1909',
     description: {
       en: "An important seat of the Nyingma order, its name means 'the solitary temple'.",
@@ -114,6 +122,7 @@ export const monasteries: Monastery[] = [
     id: 'dubdi-monastery',
     name: 'Dubdi Monastery',
     location: 'Yuksom, Sikkim',
+    coordinates: { lat: 27.3668, lng: 88.2255 },
     established: '1701',
     description: {
       en: "Also known as the 'Hermit's Cell', this is the oldest monastery in Sikkim.",
@@ -134,6 +143,7 @@ export const monasteries: Monastery[] = [
     id: 'sangachoeling-monastery',
     name: 'Sanga Choeling Monastery',
     location: 'Pelling, Sikkim',
+    coordinates: { lat: 27.3111, lng: 88.2443 },
     established: '17th century',
     description: {
       en: 'The "Place of Secret Spells", this monastery is one of the oldest in Sikkim, located on a ridge top.',

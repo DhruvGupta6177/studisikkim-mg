@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { monasteries } from "@/lib/monastery-data";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Camera, Calendar, BookOpen, Globe } from "lucide-react";
+import { Camera, Calendar, BookOpen, Globe, Route } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -23,6 +23,8 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
   if (!monastery) {
     notFound();
   }
+  
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${monastery.coordinates.lat},${monastery.coordinates.lng}`;
 
   return (
     <div className="flex flex-col">
@@ -60,7 +62,7 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
                 <CardDescription>Experience the monastery from anywhere with our 360° virtual tour.</CardDescription>
               </CardHeader>
               <CardContent>
-                  <div className="relative h-96 w-full bg-muted/50 rounded-lg overflow-hidden">
+                  <div className="relative h-[60vh] w-full bg-muted/50 rounded-lg overflow-hidden">
                     <iframe
                         className="w-full h-full border-0"
                         src={monastery.virtualTourUrl}
@@ -117,6 +119,13 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
                     <span className="font-semibold text-muted-foreground">Overview</span>
                     <p className="text-base">{monastery.description[lang]}</p>
                  </div>
+                 <Separator/>
+                 <Button asChild className="w-full">
+                    <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
+                        <Route className="w-4 h-4 mr-2"/>
+                        Get Directions
+                    </a>
+                 </Button>
               </CardContent>
             </Card>
           </aside>
