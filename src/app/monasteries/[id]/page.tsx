@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { monasteries } from "@/lib/monastery-data";
@@ -6,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Camera, Calendar, BookOpen, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export async function generateStaticParams() {
   return monasteries.map((monastery) => ({
@@ -83,7 +85,7 @@ export default function MonasteryDetailPage({ params, searchParams }: { params: 
                   History & Significance
                 </h2>
                 <Button variant="outline" asChild>
-                  <Link href={`?lang=${otherLang}`} scroll={false}>
+                  <Link href={`/monasteries/${params.id}?lang=${otherLang}`} scroll={false}>
                     <Globe className="w-4 h-4 mr-2" />
                     {otherLang === 'fr' ? 'Voir en Français' : 'View in English'}
                   </Link>

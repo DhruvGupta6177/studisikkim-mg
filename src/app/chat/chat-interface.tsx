@@ -29,7 +29,8 @@ export default function ChatInterface({ initialMessages = [] }: { initialMessage
     if (!input.trim()) return;
 
     const userMessage: Message = {role: 'user', content: input};
-    setMessages(prev => [...prev, userMessage]);
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
     setInput('');
     setIsLoading(true);
 
@@ -50,10 +51,8 @@ export default function ChatInterface({ initialMessages = [] }: { initialMessage
         title: 'Error',
         description: 'Failed to get a response from the AI. Please try again.',
       });
-       const lastMessage = messages[messages.length - 1];
-       if (lastMessage.role === 'user') {
-         setMessages(messages.slice(0, -1));
-       }
+       // Revert to previous messages state on error
+       setMessages(messages);
     } finally {
       setIsLoading(false);
     }
