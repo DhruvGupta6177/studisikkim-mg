@@ -83,7 +83,7 @@ export default function ChatInterface({ initialMessages = [] }: { initialMessage
               <div
                 className={`max-w-[75%] rounded-lg p-3 ${
                   msg.role === 'user'
-                    ? 'bg-secondary text-secondary-foreground'
+                    ? 'bg-accent text-accent-foreground'
                     : 'bg-muted'
                 }`}
               >
