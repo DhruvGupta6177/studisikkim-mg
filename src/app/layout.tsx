@@ -3,13 +3,14 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/toaster";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Sikkim Monastery Guide",
   description: "Digitize and Showcase Monasteries of Sikkim for Tourism and Cultural Preservation",
 };
 
-export default function RootLayout({
+function RootLayoutContent({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -28,5 +29,17 @@ export default function RootLayout({
         <Toaster />
       </body>
     </html>
+  );
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <Suspense>
+      <RootLayoutContent>{children}</RootLayoutContent>
+    </Suspense>
   );
 }

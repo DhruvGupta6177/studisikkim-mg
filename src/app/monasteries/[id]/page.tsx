@@ -12,8 +12,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function MonasteryDetailPage({ params }: { params: { id: string } }) {
+export default function MonasteryDetailPage({ params, searchParams }: { params: { id: string }, searchParams: { lang?: string } }) {
   const monastery = monasteries.find((m) => m.id === params.id);
+  const lang = searchParams.lang === 'fr' ? 'fr' : 'en';
 
   if (!monastery) {
     notFound();
@@ -52,8 +53,8 @@ export default function MonasteryDetailPage({ params }: { params: { id: string }
               </h2>
               <Separator className="my-4" />
               <div className="prose dark:prose-invert max-w-none space-y-4 text-lg">
-                <p>{monastery.history}</p>
-                <p>{monastery.significance}</p>
+                <p>{monastery.history[lang]}</p>
+                <p>{monastery.significance[lang]}</p>
               </div>
             </div>
             
@@ -106,7 +107,7 @@ export default function MonasteryDetailPage({ params }: { params: { id: string }
                  </div>
                  <div className="flex flex-col">
                     <span className="font-semibold text-muted-foreground">Overview</span>
-                    <span className="font-medium text-lg">{monastery.description}</span>
+                    <span className="font-medium text-lg">{monastery.description[lang]}</span>
                  </div>
               </CardContent>
             </Card>

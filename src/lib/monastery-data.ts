@@ -3,9 +3,9 @@ export type Monastery = {
   name: string;
   location: string;
   established: string;
-  description: string;
-  history: string;
-  significance: string;
+  description: Record<string, string>;
+  history: Record<string, string>;
+  significance: Record<string, string>;
   imageUrl: string;
   virtualTourUrl: string;
 };
@@ -30,48 +30,124 @@ export type CulturalEvent = {
 
 export const monasteries: Monastery[] = [
   {
-    id: "rumtek-monastery",
-    name: "Rumtek Monastery",
-    location: "Gangtok, Sikkim",
-    established: "16th century",
-    description: "One of the largest and most significant monasteries in Sikkim, Rumtek is the seat of the Karmapa Lama.",
-    history: "Originally built in the mid-16th century, the monastery was rebuilt in the 1960s. It is a replica of the original Kagyu headquarters in Tibet.",
-    significance: "It houses a golden stupa containing the relics of the 16th Karmapa, along with many other sacred artifacts and religious scriptures.",
-    imageUrl: "https://picsum.photos/seed/rumtek/800/600",
-    virtualTourUrl: "https://picsum.photos/seed/rumtek-tour/1200/800",
+    id: 'rumtek-monastery',
+    name: 'Rumtek Monastery',
+    location: 'Gangtok, Sikkim',
+    established: '16th century',
+    description: {
+      en: 'One of the largest and most significant monasteries in Sikkim, Rumtek is the seat of the Karmapa Lama.',
+      fr: 'Un des plus grands et des plus importants monastères du Sikkim, Rumtek est le siège du Karmapa Lama.',
+    },
+    history: {
+      en: 'Originally built in the mid-16th century, the monastery was rebuilt in the 1960s. It is a replica of the original Kagyu headquarters in Tibet.',
+      fr: "Construit à l'origine au milieu du XVIe siècle, le monastère a été reconstruit dans les années 1960. C'est une réplique du siège original de Kagyu au Tibet.",
+    },
+    significance: {
+      en: 'It houses a golden stupa containing the relics of the 16th Karmapa, along with many other sacred artifacts and religious scriptures.',
+      fr: 'Il abrite un stupa doré contenant les reliques du 16ème Karmapa, ainsi que de nombreux autres artefacts sacrés et écritures religieuses.',
+    },
+    imageUrl: 'https://picsum.photos/seed/rumtek/800/600',
+    virtualTourUrl: 'https://picsum.photos/seed/rumtek-tour/1200/800',
   },
   {
-    id: "pemayangtse-monastery",
-    name: "Pemayangtse Monastery",
-    location: "Pelling, Sikkim",
-    established: "1705",
-    description: "One of the oldest and premier monasteries of Sikkim, belonging to the Nyingma order of Tibetan Buddhism.",
-    history: "Founded by Lama Lhatsun Chempo in 1705, it was conceived and designed for 'ta-tshang' or 'pure monks'.",
-    significance: "Famous for its magnificent collection of Buddhist art, sculptures, and a seven-tiered wooden model of the Guru Rinpoche's Heavenly Palace, Zangdok Palri.",
-    imageUrl: "https://picsum.photos/seed/pemayangtse/800/600",
-    virtualTourUrl: "https://picsum.photos/seed/pemayangtse-tour/1200/800",
+    id: 'pemayangtse-monastery',
+    name: 'Pemayangtse Monastery',
+    location: 'Pelling, Sikkim',
+    established: '1705',
+    description: {
+      en: "One of the oldest and premier monasteries of Sikkim, belonging to the Nyingma order of Tibetan Buddhism.",
+      fr: "L'un des plus anciens et des plus importants monastères du Sikkim, appartenant à l'ordre Nyingma du bouddhisme tibétain.",
+    },
+    history: {
+      en: "Founded by Lama Lhatsun Chempo in 1705, it was conceived and designed for 'ta-tshang' or 'pure monks'.",
+      fr: "Fondé par le Lama Lhatsun Chempo en 1705, il a été conçu et dessiné pour les 'ta-tshang' ou 'moines purs'.",
+    },
+    significance: {
+      en: "Famous for its magnificent collection of Buddhist art, sculptures, and a seven-tiered wooden model of the Guru Rinpoche's Heavenly Palace, Zangdok Palri.",
+      fr: "Célèbre pour sa magnifique collection d'art bouddhiste, ses sculptures et une maquette en bois à sept niveaux du palais céleste du Guru Rinpoche, Zangdok Palri.",
+    },
+    imageUrl: 'https://picsum.photos/seed/pemayangtse/800/600',
+    virtualTourUrl: 'https://picsum.photos/seed/pemayangtse-tour/1200/800',
   },
   {
-    id: "tashiding-monastery",
-    name: "Tashiding Monastery",
-    location: "West Sikkim",
-    established: "1641",
-    description: "Considered the most sacred and holiest monastery in Sikkim, perched on a heart-shaped hilltop.",
-    history: "Founded in 1641 by Ngadak Sempa Chempo, one of the three lamas who consecrated the first Chogyal of Sikkim.",
-    significance: "It is believed that a single glimpse of the monastery can cleanse one of all sins. It is home to the sacred 'Thongwa Rangdrol' chorten, the sight of which is said to grant liberation.",
-    imageUrl: "https://picsum.photos/seed/tashiding/800/600",
-    virtualTourUrl: "https://picsum.photos/seed/tashiding-tour/1200/800",
+    id: 'tashiding-monastery',
+    name: 'Tashiding Monastery',
+    location: 'West Sikkim',
+    established: '1641',
+    description: {
+      en: 'Considered the most sacred and holiest monastery in Sikkim, perched on a heart-shaped hilltop.',
+      fr: 'Considéré comme le monastère le plus sacré et le plus saint du Sikkim, perché sur une colline en forme de cœur.',
+    },
+    history: {
+      en: 'Founded in 1641 by Ngadak Sempa Chempo, one of the three lamas who consecrated the first Chogyal of Sikkim.',
+      fr: 'Fondé en 1641 par Ngadak Sempa Chempo, l\'un des trois lamas qui ont consacré le premier Chogyal du Sikkim.',
+    },
+    significance: {
+      en: 'It is believed that a single glimpse of the monastery can cleanse one of all sins. It is home to the sacred \'Thongwa Rangdrol\' chorten, the sight of which is said to grant liberation.',
+      fr: 'On croit qu\'un simple aperçu du monastère peut purifier de tous les péchés. Il abrite le chorten sacré \'Thongwa Rangdrol\', dont la vue est censée accorder la libération.',
+    },
+    imageUrl: 'https://picsum.photos/seed/tashiding/800/600',
+    virtualTourUrl: 'https://picsum.photos/seed/tashiding-tour/1200/800',
   },
   {
-    id: "enchy-monastery",
-    name: "Enchey Monastery",
-    location: "Gangtok, Sikkim",
-    established: "1909",
-    description: "An important seat of the Nyingma order, its name means 'the solitary temple'.",
-    history: "The present monastery was built in 1909. It is believed that Lama Druptob Karpo, a tantric master known for his flying abilities, established a hermitage here.",
-    significance: "The monastery is home to a number of images of Gods, Goddesses and other religious objects. It is believed that the protecting deities, Khangchendzonga and Yabdean, reside in this monastery.",
-    imageUrl: "https://picsum.photos/seed/enchy/800/600",
-    virtualTourUrl: "https://picsum.photos/seed/enchy-tour/1200/800",
+    id: 'enchy-monastery',
+    name: 'Enchey Monastery',
+    location: 'Gangtok, Sikkim',
+    established: '1909',
+    description: {
+      en: "An important seat of the Nyingma order, its name means 'the solitary temple'.",
+      fr: "Un siège important de l'ordre Nyingma, son nom signifie 'le temple solitaire'.",
+    },
+    history: {
+      en: 'The present monastery was built in 1909. It is believed that Lama Druptob Karpo, a tantric master known for his flying abilities, established a hermitage here.',
+      fr: 'Le monastère actuel a été construit en 1909. On croit que le Lama Druptob Karpo, un maître tantrique connu pour ses capacités de vol, a établi un ermitage ici.',
+    },
+    significance: {
+      en: 'The monastery is home to a number of images of Gods, Goddesses and other religious objects. It is believed that the protecting deities, Khangchendzonga and Yabdean, reside in this monastery.',
+      fr: 'Le monastère abrite un certain nombre d\'images de dieux, de déesses et d\'autres objets religieux. On croit que les divinités protectrices, Khangchendzonga et Yabdean, résident dans ce monastère.',
+    },
+    imageUrl: 'https://picsum.photos/seed/enchy/800/600',
+    virtualTourUrl: 'https://picsum.photos/seed/enchy-tour/1200/800',
+  },
+  {
+    id: 'dubdi-monastery',
+    name: 'Dubdi Monastery',
+    location: 'Yuksom, Sikkim',
+    established: '1701',
+    description: {
+      en: "Also known as the 'Hermit's Cell', this is the oldest monastery in Sikkim.",
+      fr: 'Aussi connu sous le nom de "Cellule de l\'Ermite", c\'est le plus ancien monastère du Sikkim.',
+    },
+    history: {
+      en: 'Established in 1701 by the Chogyar Namgyal, it was the first monastery established after the consecration of the first Chogyal.',
+      fr: 'Établi en 1701 par le Chogyar Namgyal, ce fut le premier monastère établi après la consécration du premier Chogyal.',
+    },
+    significance: {
+      en: 'It is a highly revered site and an important place of pilgrimage for Buddhists.',
+      fr: 'C\'est un site très vénéré et un lieu de pèlerinage important pour les bouddhistes.',
+    },
+    imageUrl: 'https://picsum.photos/seed/dubdi/800/600',
+    virtualTourUrl: 'https://picsum.photos/seed/dubdi-tour/1200/800',
+  },
+  {
+    id: 'sangachoeling-monastery',
+    name: 'Sanga Choeling Monastery',
+    location: 'Pelling, Sikkim',
+    established: '17th century',
+    description: {
+      en: 'The "Place of Secret Spells", this monastery is one of the oldest in Sikkim, located on a ridge top.',
+      fr: 'Le "Lieu des Sorts Secrets", ce monastère est l\'un des plus anciens du Sikkim, situé au sommet d\'une crête.',
+    },
+    history: {
+      en: 'Built in 1697, it is accessible only by walking and offers stunning views of the surrounding mountains.',
+      fr: 'Construit en 1697, il n\'est accessible qu\'à pied et offre une vue imprenable sur les montagnes environnantes.',
+    },
+    significance: {
+      en: 'It is particularly important for the Nyingma sect and was originally reserved for men only.',
+      fr: 'Il est particulièrement important pour la secte Nyingma et était à l\'origine réservé aux hommes uniquement.',
+    },
+    imageUrl: 'https://picsum.photos/seed/sangachoeling/800/600',
+    virtualTourUrl: 'https://picsum.photos/seed/sangachoeling-tour/1200/800',
   },
 ];
 
@@ -89,7 +165,7 @@ export const itineraries: Itinerary[] = [
     title: "West Sikkim Heritage Trail",
     duration: "4 Days / 3 Nights",
     description: "A journey through the historical heart of Sikkim, visiting some of the oldest and most revered monasteries.",
-    monasteries: ["Pemayangtse Monastery", "Tashiding Monastery"],
+    monasteries: ["Pemayangtse Monastery", "Tashiding Monastery", "Dubdi Monastery", "Sanga Choeling Monastery"],
     imageUrl: "https://picsum.photos/seed/west-sikkim/600/400",
   },
   {
@@ -97,7 +173,7 @@ export const itineraries: Itinerary[] = [
     title: "Complete Sikkim Monastery Circuit",
     duration: "7 Days / 6 Nights",
     description: "An immersive tour covering the most significant monasteries across East and West Sikkim for a comprehensive cultural experience.",
-    monasteries: ["Rumtek Monastery", "Pemayangtse Monastery", "Tashiding Monastery", "Enchey Monastery"],
+    monasteries: ["Rumtek Monastery", "Pemayangtse Monastery", "Tashiding Monastery", "Enchey Monastery", "Dubdi Monastery", "Sanga Choeling Monastery"],
     imageUrl: "https://picsum.photos/seed/complete-sikkim/600/400",
   },
 ];

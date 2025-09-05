@@ -4,7 +4,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { monasteries } from "@/lib/monastery-data";
 import { MapPin } from "lucide-react";
 
-export default function MonasteriesPage() {
+export default function MonasteriesPage({ searchParams }: { searchParams: { lang?: string } }) {
+  const lang = searchParams.lang === 'fr' ? 'fr' : 'en';
+
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="text-center mb-12">
@@ -35,7 +37,7 @@ export default function MonasteriesPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground line-clamp-3">{monastery.description}</p>
+                <p className="text-muted-foreground line-clamp-3">{monastery.description[lang]}</p>
               </CardContent>
             </Card>
           </Link>
