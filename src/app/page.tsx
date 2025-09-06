@@ -35,26 +35,54 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative h-[60vh] flex items-center justify-center text-center text-white">
+      <section className="relative h-[85vh] flex items-center justify-center text-center text-white">
         <Image
-          src="https://picsum.photos/1600/900"
-          alt="A serene monastery in Sikkim"
-          data-ai-hint="serene monastery"
+          src="https://www.designveloper.com/wp-content/uploads/2023/04/00c3df3362baac58a6f6dc35b1aeea5a.webp"
+          alt="Beautiful waterfront with colorful buildings"
           fill
-          className="object-cover"
+          className="object-cover scale-105 transition-transform duration-[30s] hover:scale-110 brightness-100 contrast-105"
           priority
+          quality={100}
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 px-4">
-          <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight">
-            A Journey Through Sikkim&apos;s Sacred Monasteries
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/30 backdrop-blur-[0.5px]" />
+        <div className="relative z-10 px-4 max-w-4xl mx-auto transform transition-all duration-1000 hover:scale-105">
+          <h1 className="text-5xl md:text-7xl font-headline font-bold tracking-tight mb-8 animate-slideInFromTop">
+            <span className="block text-slate-900 drop-shadow-[0_2px_2px_rgba(255,255,255,0.5)] hover:text-slate-800 transition-all duration-500">
+              A Journey Through Sikkim&apos;s Sacred Monasteries
+            </span>
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-primary-foreground/90">
+          <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-800 font-medium animate-slideInFromBottom py-4 px-6 rounded-full bg-white/80 shadow-xl transform hover:scale-105 transition-all duration-500">
             Explore the spiritual heart of the Himalayas. Your guide to cultural treasures and serene landscapes.
           </p>
-          <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
-            <Link href="/monasteries">Start Exploring</Link>
-          </Button>
+          <div className="mt-16 animate-fadeIn">
+            <Link href="/monasteries" className="group relative inline-flex items-center justify-center">
+              <div className="absolute -inset-px bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600 rounded-full opacity-70 group-hover:opacity-100 blur-lg transition duration-1000 group-hover:duration-200 animate-gradient-xy"></div>
+              <Button 
+                size="lg" 
+                className="relative px-8 py-6 bg-slate-900 hover:bg-slate-800 text-white rounded-full transition-all duration-500 ease-out group-hover:scale-105 shadow-xl"
+              >
+                <span className="relative inline-flex items-center gap-3 text-lg font-medium">
+                  Start Exploring
+                  <span className="relative w-7 h-7 rounded-full bg-slate-700 group-hover:rotate-90 transition-transform duration-500 hover:shadow-lg">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-6 w-6 p-1" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 

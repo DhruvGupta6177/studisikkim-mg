@@ -1,0 +1,22 @@
+{
+  "name": "Monastery 360°",
+  "short_name": "Monastery 360°",
+  "description": "Immersive 360° Tours of Sacred Monasteries in Sikkim",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#6a11cb",
+  "theme_color": "#6a11cb",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

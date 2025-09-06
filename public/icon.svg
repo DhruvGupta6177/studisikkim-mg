@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="248" fill="url(#gradient)" stroke="white" stroke-width="16"/>
+  
+  <!-- Monastery Silhouette -->
+  <path d="M256 120L156 220H196V340H316V220H356L256 120Z" fill="white"/>
+  
+  <!-- 360 Arc -->
+  <path d="M256 80C158.96 80 80 158.96 80 256C80 353.04 158.96 432 256 432C353.04 432 432 353.04 432 256"
+        stroke="white" stroke-width="24" stroke-linecap="round" stroke-dasharray="8,8">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 256 256"
+      to="360 256 256"
+      dur="8s"
+      repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" style="stop-color: #6a11cb"/>
+      <stop offset="100%" style="stop-color: #2575fc"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -2,6 +2,137 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .chat-prompt-glow {
+    background: linear-gradient(90deg, #f59e0b, #e11d48, #7c3aed);
+    background-size: 200% 200%;
+    animation: prompting 3s ease infinite;
+  }
+
+  .chat-input-bg {
+    background: linear-gradient(135deg, rgba(251,191,36,0.1), rgba(225,29,72,0.1), rgba(124,58,237,0.1));
+  }
+
+  @keyframes prompting {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Animation Keyframes */
+  @keyframes gradient-xy {
+    0%, 100% {
+      background-size: 400% 400%;
+      background-position: left top;
+    }
+    25% {
+      background-size: 400% 400%;
+      background-position: right top;
+    }
+    50% {
+      background-size: 400% 400%;
+      background-position: right bottom;
+    }
+    75% {
+      background-size: 400% 400%;
+      background-position: left bottom;
+    }
+  }
+  @keyframes float {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    50% { transform: translateY(-10px); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-gradient-x {
+    animation: gradient-x 15s ease infinite;
+  }
+
+  @keyframes slideInFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes slideInFromRight {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes slideInFromTop {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes slideInFromBottom {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* Animation Classes */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-slideInFromLeft {
+    animation: slideInFromLeft 0.5s ease-out;
+  }
+
+  .animate-slideInFromRight {
+    animation: slideInFromRight 0.5s ease-out;
+  }
+
+  .animate-slideInFromTop {
+    animation: slideInFromTop 0.5s ease-out;
+  }
+
+  .animate-slideInFromBottom {
+    animation: slideInFromBottom 0.5s ease-out;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  /* Special Effects */
+  .shadow-glow {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
 @layer base {
   :root {
     --background: 210 40% 98%;

@@ -9,11 +9,30 @@ export default function MonasteriesPage({ searchParams }: { searchParams: { lang
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-headline font-bold">Monasteries of Sikkim</h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          Explore the rich cultural and spiritual heritage of Sikkim through its ancient and revered monasteries.
-        </p>
+      <div className="text-center mb-12 relative">
+        <div className="relative inline-block animate-slideInFromTop">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold relative z-10 p-2">
+            <span className="bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600 text-transparent bg-clip-text animate-slideInFromLeft">
+              Monasteries
+            </span>
+            <span className="inline-block mx-2 animate-float">of</span>
+            <span className="bg-gradient-to-r from-blue-500 via-purple-600 to-blue-500 text-transparent bg-clip-text animate-slideInFromRight">
+              Sikkim
+            </span>
+          </h1>
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-purple-500/10 blur-3xl -z-10 transform scale-150"></div>
+        </div>
+        <div className="mt-8 space-y-2 animate-slideInFromBottom">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Explore the rich cultural and spiritual heritage of Sikkim through its ancient and revered monasteries.
+          </p>
+          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground animate-fadeIn">
+            <span className="inline 
+            w-8 h-[1px] bg-gradient-to-r from-purple-500 to-transparent"></span>
+            <span>Sacred Spaces • Ancient Wisdom • Living Traditions</span>
+            <span className="inline w-8 h-[1px] bg-gradient-to-l from-purple-500 to-transparent"></span>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

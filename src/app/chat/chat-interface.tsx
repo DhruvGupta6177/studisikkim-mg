@@ -1,12 +1,12 @@
 'use client';
 
-import {useState, useRef, useEffect} from 'react';
-import {Button} from '@/components/ui/button';
-import {Input} from '@/components/ui/input';
-import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
-import {Loader2, Send, MountainSnow, User, Bot} from 'lucide-react';
-import {chatAboutMonasteries} from '@/ai/flows/chat-about-monasteries';
+import { useState, useRef, useEffect } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Loader2, MountainSnow, User, Bot } from 'lucide-react';
+import { ChatPrompt } from './chat-prompt';
+import { chatAboutMonasteries } from '@/ai/flows/chat-about-monasteries';
 import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
 
 type Message = {
   role: 'user' | 'model';
@@ -59,7 +59,7 @@ export default function ChatInterface({ initialMessages = [] }: { initialMessage
   };
 
   return (
-    <Card className="flex flex-col h-[70vh]">
+    <Card className="flex flex-col h-[70vh] border-muted-foreground/20 shadow-lg bg-gradient-to-b from-background to-muted/50">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <MountainSnow className="text-primary" />
@@ -76,21 +76,22 @@ export default function ChatInterface({ initialMessages = [] }: { initialMessage
               }`}
             >
               {msg.role === 'model' && (
-                <div className="bg-primary rounded-full p-2 text-primary-foreground">
+                <div className="bg-gradient-to-r from-primary to-primary-foreground rounded-full p-2 text-primary-foreground shadow-lg">
                   <Bot size={20} />
                 </div>
               )}
               <div
-                className={`max-w-[75%] rounded-lg p-3 ${
+                className={cn(
+                  'max-w-[75%] rounded-lg p-3 shadow-sm transition-all duration-200',
                   msg.role === 'user'
-                    ? 'bg-accent text-accent-foreground'
-                    : 'bg-muted'
-                }`}
+                    ? 'bg-gradient-to-r from-primary to-primary-foreground text-primary-foreground'
+                    : 'bg-gradient-to-r from-background to-muted border border-muted-foreground/20'
+                )}
               >
                 <p className="text-sm">{msg.content}</p>
               </div>
                {msg.role === 'user' && (
-                <div className="bg-blue-500 rounded-full p-2 text-white">
+                <div className="bg-gradient-to-r from-accent to-accent-foreground rounded-full p-2 text-accent-foreground shadow-lg">
                   <User size={20} />
                 </div>
               )}
@@ -98,32 +99,21 @@ export default function ChatInterface({ initialMessages = [] }: { initialMessage
           ))}
            {isLoading && (
             <div className="flex items-start gap-3 justify-start">
-               <div className="bg-primary rounded-full p-2 text-primary-foreground">
+               <div className="bg-gradient-to-r from-primary to-primary-foreground rounded-full p-2 text-primary-foreground shadow-lg">
                   <Bot size={20} />
                 </div>
-              <div className="bg-muted rounded-lg p-3 flex items-center">
-                <Loader2 className="h-5 w-5 animate-spin" />
+              <div className="bg-gradient-to-r from-background to-muted border border-muted-foreground/20 rounded-lg p-3 flex items-center">
+                <Loader2 className="h-5 w-5 animate-spin text-primary" />
               </div>
             </div>
           )}
         </div>
-        <form onSubmit={handleSendMessage} className="flex items-center gap-2 pt-4 border-t">
-          <Input
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            placeholder="Ask about a monastery..."
-            disabled={isLoading}
-            className="flex-1"
-          />
-          <Button type="submit" disabled={isLoading || !input.trim()} size="icon">
-            {isLoading ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <Send className="h-4 w-4" />
-            )}
-            <span className="sr-only">Send</span>
-          </Button>
-        </form>
+        <ChatPrompt
+          isLoading={isLoading}
+          onSubmit={handleSendMessage}
+          input={input}
+          setInput={setInput}
+        />
       </CardContent>
     </Card>
   );

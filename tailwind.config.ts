@@ -16,8 +16,45 @@ export default {
       },
     },
     extend: {
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        slideInFromLeft: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideInFromRight: {
+          '0%': { transform: 'translateX(100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideInFromTop: {
+          '0%': { transform: 'translateY(-20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideInFromBottom: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        float: 'float 3s ease-in-out infinite',
+        slideInFromLeft: 'slideInFromLeft 0.5s ease-out',
+        slideInFromRight: 'slideInFromRight 0.5s ease-out',
+        slideInFromTop: 'slideInFromTop 0.5s ease-out',
+        slideInFromBottom: 'slideInFromBottom 0.5s ease-out',
+        fadeIn: 'fadeIn 0.5s ease-out',
+        'gradient-xy': 'gradient-xy 15s ease infinite',
+      },
       fontFamily: {
         body: ['Inter', 'sans-serif'],
+        monastery: ['Cinzel Decorative', 'serif'],
+        description: ['Cormorant Garamond', 'serif'],
         headline: ['Literata', 'serif'],
         code: ['monospace'],
       },
