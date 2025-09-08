@@ -1,0 +1,36 @@
+@keyframes shimmer {
+  0% { background-position: -200% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes drawLine {
+  0% { stroke-dasharray: 400; stroke-dashoffset: 400; }
+  100% { stroke-dasharray: 400; stroke-dashoffset: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(2px); }
+}
+
+@keyframes fadeInSlide {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.shimmerEffect {
+  background-size: 200% auto;
+  animation: shimmer 8s linear infinite;
+}
+
+.drawLineEffect {
+  animation: drawLine 1.5s ease-out forwards;
+}
+
+.floatEffect {
+  animation: float 6s ease-in-out infinite;
+}
+
+.fadeInSlideEffect {
+  animation: fadeInSlide 1.2s ease-out forwards;
+}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MountainSnow } from "lucide-react";
+import { Monastery360Logo } from "@/components/ui/monastery360-logo";
 
 export function Footer() {
   return (
@@ -9,17 +9,8 @@ export function Footer() {
       <div className="container relative mx-auto px-4 py-12">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="group perspective-1000">
-            <div className="flex items-center gap-3 transition-transform duration-700 transform-gpu group-hover:[transform:rotateY(360deg)]">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 rounded-lg blur-lg opacity-50 group-hover:opacity-100 transition-opacity"></div>
-                <MountainSnow className="h-7 w-7 text-cyan-50 relative drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
-              </div>
-              <span className="font-headline text-xl font-bold relative">
-                <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 blur-lg opacity-0 group-hover:opacity-30 transition-opacity"></span>
-                <span className="relative bg-gradient-to-r from-cyan-200 via-teal-200 to-emerald-200 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-                  Sikkim Monastery Guide
-                </span>
-              </span>
+            <div className="transition-transform duration-700 transform-gpu group-hover:[transform:rotateY(360deg)]">
+              <Monastery360Logo className="text-cyan-50" />
             </div>
           </div>
           

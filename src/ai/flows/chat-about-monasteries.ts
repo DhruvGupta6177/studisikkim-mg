@@ -10,7 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import {monasteries} from '@/lib/monastery-data';
+import {monasteries} from '@/lib/monastery-data-new';
 
 const ChatInputSchema = z.object({
   history: z.array(z.object({
@@ -27,14 +27,14 @@ const ChatOutputSchema = z.object({
 export type ChatOutput = z.infer<typeof ChatOutputSchema>;
 
 // Convert monastery data to a string for the prompt
-const monasteryDataString = monasteries
+const monasteryDataString = (monasteries as any[])
   .map(
     m =>
-      `Name: ${m.name}, Location: ${m.location}, Established: ${
-        m.established
-      }, Description: ${m.description.en}, History: ${
-        m.history.en
-      }, Significance: ${m.significance.en}`
+      `Name: ${m.name?.en || 'Unknown'}, Location: ${m.location?.en || 'Unknown'}, Established: ${
+        (m as any).established || m.yearFounded || 'Unknown'
+      }, Description: ${m.description?.en || 'No description available'}, History: ${
+        (m as any).history?.en || 'No history available'
+      }, Significance: ${(m as any).significance?.en || 'No significance information available'}`
   )
   .join('\n\n');
 

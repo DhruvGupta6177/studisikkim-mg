@@ -1,0 +1,36 @@
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes scaleIn {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.7; }
+}
+
+.gradientText {
+  background-size: 200% auto;
+  animation: gradient-x 8s linear infinite;
+}
+
+.scaleInLine {
+  animation: scaleIn 1s ease-out forwards;
+}
+
+.fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.glowPulse {
+  animation: pulse 4s ease-in-out infinite;
+}

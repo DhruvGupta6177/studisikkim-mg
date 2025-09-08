@@ -9,11 +9,12 @@ import {
   Map,
   Menu,
   MessageCircle,
-  MountainSnow,
   Route,
-  Sparkles
+  Sparkles,
+  LandPlot,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Monastery360Logo } from "@/components/ui/monastery360-logo";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -59,6 +60,36 @@ function LanguageSwitcher() {
         <DropdownMenuItem onSelect={() => setLanguage('fr')} disabled={currentLang === 'fr'}>
           Français
         </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('hi')} disabled={currentLang === 'hi'}>
+          हिन्दी (Hindi)
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('es')} disabled={currentLang === 'es'}>
+          Español (Spanish)
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('de')} disabled={currentLang === 'de'}>
+          Deutsch (German)
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('zh')} disabled={currentLang === 'zh'}>
+          中文 (Chinese)
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('ja')} disabled={currentLang === 'ja'}>
+          日本語 (Japanese)
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('ko')} disabled={currentLang === 'ko'}>
+          한국어 (Korean)
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('ar')} disabled={currentLang === 'ar'}>
+          العربية (Arabic)
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('pt')} disabled={currentLang === 'pt'}>
+          Português (Portuguese)
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('ru')} disabled={currentLang === 'ru'}>
+          Русский (Russian)
+        </DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => setLanguage('it')} disabled={currentLang === 'it'}>
+          Italiano (Italian)
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
@@ -71,17 +102,11 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b shadow-lg bg-gradient-to-r from-purple-600 to-blue-500 animate-fadeIn">
       <div className="container flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2 font-bold text-white group">
-            <MountainSnow className="h-7 w-7 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 animate-float" />
-            <span className="hidden font-headline sm:inline-block text-2xl tracking-wide drop-shadow-lg animate-slideInFromLeft">
-              <span className="bg-gradient-to-r from-white via-purple-300 to-white/90 bg-clip-text text-transparent">
-                Monastery
-              </span>
-              <span className="relative ml-2 text-white">
-                360
-                <span className="absolute -top-1 -right-4 text-sm text-blue-300 animate-spin">°</span>
-              </span>
-            </span>
+          <Link href="/" className="flex items-center gap-2 text-white group">
+            <Monastery360Logo 
+              size="lg"
+              className="transition-all duration-300 group-hover:scale-110"
+            />
           </Link>
         </div>
 

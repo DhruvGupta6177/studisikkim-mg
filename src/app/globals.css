@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+  }
+}
+
 @layer utilities {
   .chat-prompt-glow {
     background: linear-gradient(90deg, #f59e0b, #e11d48, #7c3aed);
